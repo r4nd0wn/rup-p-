@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+##!/usr/bin/python3
 
 import datetime
 import sys 
@@ -49,10 +49,23 @@ def printit(perred, pergreen):
 logpath = "/var/log/rup/rup.log"
 red, green, perred, pergreen, unsuccessfull = anal(parse(logpath))
 
-if "-f" in sys.argv or "--failed" in sys.argv:
+if "--failed" in sys.argv:
     for line in unsuccessfull:
         print(line)
-if "--help" in sys.argv and len(sys.argv) == 1 or "-h" in sys.argv and len(sys.argv):
+
+elif "-f" in sys.argv:
+    for line in unsuccessfull:
+        print(line)
+
+elif "--help" in sys.argv:
+    print("Usage: rupp [OPTION]")
+    print("Parse the rup.log file to get the status of your servers uptime.")
+    print(f"Arguments:")
+    print(f"\t-f, --failed\t shows all uptime check fails with timestamp above the status bar.")
+    print(f"\t-h, --help\t shows this help.")
+    exit()
+
+elif "-h" in sys.argv:
     print("Usage: rupp [OPTION]")
     print("Parse the rup.log file to get the status of your servers uptime.")
     print(f"Arguments:")

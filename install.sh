@@ -8,5 +8,6 @@ cp parser.py /usr/bin/rupp
 chmod +x /usr/bin/rupp
 cp rup.service /etc/systemd/system/
 touch /var/log/rup/rup.log
+systemctl enable rup
 echo finished
 
