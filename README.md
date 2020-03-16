@@ -1,6 +1,6 @@
 # rup\(p\)
 
-rup is a uptime checker which requests duckduckgo and sort the HTTP response codes to track the uptime of a server.
+rup is an uptime checker which requests duckduckgo and sort the HTTP response codes to track the uptime of a server.
 
 
 
