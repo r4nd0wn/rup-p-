@@ -13,4 +13,4 @@ def pingme():
     logfile.close()
 while True:
     pingme()
-    time.sleep(300)
+    time.sleep(30)

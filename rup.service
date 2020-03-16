@@ -1,5 +1,5 @@
 [Unit]
-Description=uptime checker which requests duckduckgo every 5 minutes
+Description=uptime checker which requests duckduckgo every 30 seconds
 
 [Service]
 Type=simple

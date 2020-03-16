@@ -7,4 +7,6 @@ chmod +x /usr/bin/rup
 cp parser.py /usr/bin/rupp
 chmod +x /usr/bin/rupp
 cp rup.service /etc/systemd/system/
+touch /var/log/rup/rup.log
 echo finished
+
