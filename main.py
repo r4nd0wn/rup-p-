@@ -4,7 +4,7 @@ import requests
 import datetime
 import time
 
-logpath = "rup.log"
+logpath = "/var/log/rup/rup.log"
 def pingme():
     response = requests.head('https://duckduckgo.com//')
     logfile = open(logpath, "a")
