@@ -1,7 +1,7 @@
 # rup\(p\)
 
 rup is an uptime checker which requests duckduckgo and sort the HTTP response codes to track the uptime of a server.
-
+*only sorting 200 Requests till now lol*
 
 
 ### requirements
