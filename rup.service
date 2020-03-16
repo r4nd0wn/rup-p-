@@ -1,0 +1,10 @@
+[Unit]
+Description=uptime checker wich requests duckduckgo every 5 minutes
+
+[Service]
+Type=simple
+WorkingDirectory=/var/log/rup
+ExecStart=/usr/bin/rup
+
+[Install]
+WantedBy=multi-user.target

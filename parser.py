@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env python
 
 import datetime
 import sys 
@@ -46,7 +46,7 @@ def printit(perred, pergreen):
 
 
 
-logpath = "rup.log"
+logpath = "/var/log/rup/rup.log"
 red, green, perred, pergreen, unsuccessfull = anal(parse(logpath))
 
 if "-f" in sys.argv or "--failed" in sys.argv:
@@ -60,6 +60,6 @@ if "--help" in sys.argv and len(sys.argv) == 1 or "-h" in sys.argv and len(sys.a
     print(f"\t-h, --help\t shows this help.")
     exit()
 
-printit(perred, pergreen)
+printit(pergreen, perred)
 print(f"{bcolors.OKGREEN}working uprequests \t {bcolors.OKBLUE}{green}{bcolors.ENDC}")
 print(f"{bcolors.FAIL}non-working uprequests \t {bcolors.OKBLUE}{red}{bcolors.ENDC}")
