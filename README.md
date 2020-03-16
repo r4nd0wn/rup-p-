@@ -7,10 +7,16 @@ rup is an uptime checker which requests duckduckgo and sort the HTTP response co
 ### requirements
 
 Rup depends on python3 and uses the following standard libarys (usually no need to install it seperately):
-* [requests](https://pypi.org/project/requests/) - http requests
 * [datetime](https://docs.python.org/3/library/datetime.html) - to timestamp the logs
 * [time](https://docs.python.org/3/library/time.html) - helps the script to fall asleep
 * [sys](https://docs.python.org/3/library/sys.html) - to pass `rupp` arguments to the script
+
+And also depends on:
+* [requests](https://pypi.org/project/requests/) - http requests
+Install it via:
+```sh
+$ pip install requests
+```
 
 
 ### Installation
