@@ -32,6 +32,13 @@ To check the uptime, use rupp:
 $ rupp --help
 ```
 
+### ToDo
+* offer the opportunity to use different sleep duration between checking
+* create cronjob for systemd haters
+* check IPv4 and IPv6 abilitys seperately
+* add the ability for `rupp` to check a specific time
+* update rupp to ncurse 
+
 ### contribute
 Feel free to fork and check my code :)
 
