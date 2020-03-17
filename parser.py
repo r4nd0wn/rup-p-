@@ -44,7 +44,7 @@ def printit(perred, pergreen):
     strgreen = pipe * int(pergreen)
     print(f"[{bcolors.OKGREEN}{strred}{bcolors.FAIL}{strgreen}{bcolors.ENDC}]")
 
-def estimateTimes(succ, unsucc):
+def estimateTimes(unsucc, succ):
     secsucc = succ * 30
     secunsucc = unsucc * 30
     timedsucc = datetime.timedelta(seconds=secsucc)
