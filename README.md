@@ -9,7 +9,7 @@ rup depends on python3 and uses the following standard libarys:
 * [datetime](https://docs.python.org/3/library/datetime.html) - to timestamp the logs
 * [time](https://docs.python.org/3/library/time.html) - helps the script to fall asleep
 * [sys](https://docs.python.org/3/library/sys.html) - to pass `rupp` arguments to the script
-* [os](https:((docs.python.org/3/library/os.html) - to issue ping command and check the result
+* [os](https://docs.python.org/3/library/os.html) - to issue ping command and check the result
 
 ### Installation
 make sure python3 is installed and run the following commands:
