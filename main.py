@@ -5,7 +5,7 @@ import time
 import os
 
 
-ip = "8.8.8.8"
+ip = "localhost"
 logpath = "/var/log/rup/rup.log"
 status = ""
 def pingit():
@@ -19,6 +19,10 @@ def pingit():
     logfile.write(str(datetime.datetime.now()) + "\t" + status + "\n")
     print(status)
     logfile.close()
+    return status
 while True:
-    pingit()
-    time.sleep(30)
+    state = pingit()
+    if state == "up":
+        time.sleep(30)
+    elif state == "down":
+        time.sleep(20)
