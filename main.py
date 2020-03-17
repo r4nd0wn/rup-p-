@@ -5,7 +5,7 @@ import time
 import os
 
 
-ip = "localhost"
+ip = "google.com"
 logpath = "/var/log/rup/rup.log"
 status = ""
 def pingit():
