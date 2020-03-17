@@ -34,7 +34,7 @@ def anal(dick):
             successfull[key] = dick[key]
         else:
             unsuccessfull[key] = dick[key]
-    return len(unsuccessfull), len(successfull), len(unsuccessfull) / all, len(successfull) / all, unsuccessfull
+    return len(unsuccessfull), len(successfull), len(unsuccessfull) / all, len(successfull) / all, unsuccessfull, dick
 
 def printit(perred, pergreen):
     pipe = "|"
@@ -44,11 +44,18 @@ def printit(perred, pergreen):
     strgreen = pipe * int(pergreen)
     print(f"[{bcolors.OKGREEN}{strred}{bcolors.FAIL}{strgreen}{bcolors.ENDC}]")
 
+def estimateTimes(succ, unsucc):
+    secsucc = succ * 30
+    secunsucc = unsucc * 30
+    timedsucc = datetime.timedelta(seconds=secsucc)
+    timedunsucc = datetime.timedelta(seconds=secunsucc)
+    return timedunsucc, timedsucc
+
 
 
 logpath = "/var/log/rup/rup.log"
-red, green, perred, pergreen, unsuccessfull = anal(parse(logpath))
-
+red, green, perred, pergreen, unsuccessfull, allcalls = anal(parse(logpath))
+timered, timegreen = estimateTimes(red, green)
 if "--failed" in sys.argv:
     for line in unsuccessfull:
         print(line)
@@ -76,3 +83,5 @@ elif "-h" in sys.argv:
 printit(pergreen, perred)
 print(f"{bcolors.OKGREEN}working uprequests \t {bcolors.OKBLUE}{green}{bcolors.ENDC}")
 print(f"{bcolors.FAIL}non-working uprequests \t {bcolors.OKBLUE}{red}{bcolors.ENDC}")
+print(f"{bcolors.OKGREEN}estimated time online \t {bcolors.OKBLUE}{timegreen}{bcolors.ENDC}")
+print(f"{bcolors.OKGREEN}estimated time online \t {bcolors.OKBLUE}{timered}{bcolors.ENDC}")
