@@ -30,7 +30,7 @@ def anal(dick):
     successfull = {}
     unsuccessfull = {}
     for key in dick:
-        if dick[key] == "<Response [200]>":
+        if dick[key] == "up":
             successfull[key] = dick[key]
         else:
             unsuccessfull[key] = dick[key]

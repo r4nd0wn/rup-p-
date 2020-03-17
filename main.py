@@ -1,16 +1,24 @@
 #!/usr/bin/python3
 
-import requests
 import datetime
 import time
+import os
 
+
+ip = "8.8.8.8"
 logpath = "/var/log/rup/rup.log"
-def pingme():
-    response = requests.head('https://duckduckgo.com//')
+status = ""
+def pingit():
+    pings = os.system("ping -c 1 " + ip)
+    if pings == 0:
+        status = "up"
+    else:
+        status = "down"
+
     logfile = open(logpath, "a")
-    logfile.write(str(datetime.datetime.now()) + "\t" + str(response) + "\n")
-    print(response)
+    logfile.write(str(datetime.datetime.now()) + "\t" + status + "\n")
+    print(status)
     logfile.close()
 while True:
-    pingme()
+    pingit()
     time.sleep(30)
