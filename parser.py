@@ -82,6 +82,6 @@ elif "-h" in sys.argv:
 
 printit(pergreen, perred)
 print(f"{bcolors.OKGREEN}working uprequests \t {bcolors.OKBLUE}{green}{bcolors.ENDC}")
-print(f"{bcolors.FAIL}non-working uprequests \t {bcolors.OKBLUE}{red}{bcolors.ENDC}")
 print(f"{bcolors.OKGREEN}estimated time online \t {bcolors.OKBLUE}{timegreen}{bcolors.ENDC}")
+print(f"{bcolors.FAIL}non-working uprequests \t {bcolors.OKBLUE}{red}{bcolors.ENDC}")
 print(f"{bcolors.FAIL}estimated time offline \t {bcolors.OKBLUE}{timered}{bcolors.ENDC}")
