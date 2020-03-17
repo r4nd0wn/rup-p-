@@ -1,23 +1,15 @@
 # rup\(p\)
 
-rup is an uptime checker which requests duckduckgo and sort the HTTP response codes to track the uptime of a server.
-*only sorting http200 responses till now. lol.*
+rup is an uptime checker which pings an IP to track the uptime of a server.
 
 
 ### requirements
 
-Rup depends on python3 and uses the following standard libarys (usually no need to install it seperately):
+rup depends on python3 and uses the following standard libarys:
 * [datetime](https://docs.python.org/3/library/datetime.html) - to timestamp the logs
 * [time](https://docs.python.org/3/library/time.html) - helps the script to fall asleep
 * [sys](https://docs.python.org/3/library/sys.html) - to pass `rupp` arguments to the script
-
-And also depends on:
-* [requests](https://pypi.org/project/requests/) - http requests
-Install it via:
-```sh
-$ pip install requests
-```
-
+* [os](https:((docs.python.org/3/library/os.html) - to issue ping command and check the result
 
 ### Installation
 make sure python3 is installed and run the following commands:
@@ -27,10 +19,7 @@ $ cd rup-p-
 $ chmod +x install.sh
 $ sudo ./install.sh
 ```
-to enable the systemd unit (recommended):
-```
-$ systemctl enable rup
-```
+
 
 ### rupp
 To check the uptime, use rupp:
