@@ -2,6 +2,7 @@
 
 import datetime
 import sys 
+import os
 
 class bcolors:
     HEADER = '\033[95m'
@@ -39,8 +40,8 @@ def anal(dick):
 def printit(perred, pergreen, cols):
     cols = cols - 2
     pipe = "|"
-    strred = pipe * round(cols / int(perred))
-    strgreen = pipe * round(cols / int(pergreen))
+    strred = pipe * round(cols * perred)
+    strgreen = pipe * round(cols * pergreen)
     print(f"[{bcolors.OKGREEN}{strred}{bcolors.FAIL}{strgreen}{bcolors.ENDC}]")
 
 def estimateTimes(unsucc, succ):
