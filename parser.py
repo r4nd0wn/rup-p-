@@ -36,12 +36,11 @@ def anal(dick):
             unsuccessfull[key] = dick[key]
     return len(unsuccessfull), len(successfull), len(unsuccessfull) / all, len(successfull) / all, unsuccessfull, dick
 
-def printit(perred, pergreen):
+def printit(perred, pergreen, cols):
+    cols = cols - 2
     pipe = "|"
-    perred = perred * 100
-    pergreen = pergreen * 100
-    strred = pipe * int(perred)
-    strgreen = pipe * int(pergreen)
+    strred = pipe * round(cols / int(perred))
+    strgreen = pipe * round(cols / int(pergreen))
     print(f"[{bcolors.OKGREEN}{strred}{bcolors.FAIL}{strgreen}{bcolors.ENDC}]")
 
 def estimateTimes(unsucc, succ):
@@ -79,8 +78,8 @@ elif "-h" in sys.argv:
     print(f"\t-f, --failed\t shows all uptime check fails with timestamp above the status bar.")
     print(f"\t-h, --help\t shows this help.")
     exit()
-
-printit(pergreen, perred)
+cols, rows = os.get_terminal_size(0)
+printit(pergreen, perred, cols)
 print(f"{bcolors.OKGREEN}working uprequests \t {bcolors.OKBLUE}{green}{bcolors.ENDC}")
 print(f"{bcolors.OKGREEN}estimated time online \t {bcolors.OKBLUE}{timegreen}{bcolors.ENDC}")
 print(f"{bcolors.FAIL}non-working uprequests \t {bcolors.OKBLUE}{red}{bcolors.ENDC}")
