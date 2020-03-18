@@ -24,6 +24,7 @@ def parse(logpath):
             logdict[items.split("\t")[0]] = items.split("\t")[1]
         except:
             i= 0
+
     return logdict
 
 def anal(dick):
@@ -58,11 +59,11 @@ red, green, perred, pergreen, unsuccessfull, allcalls = anal(parse(logpath))
 timered, timegreen = estimateTimes(red, green)
 if "--failed" in sys.argv:
     for line in unsuccessfull:
-        print(line)
+        print(line + "\t" + unsuccessfull[line])
 
 elif "-f" in sys.argv:
     for line in unsuccessfull:
-        print(line)
+        print(line + "\t" + unsuccessfull[line])
 
 elif "--help" in sys.argv:
     print("Usage: rupp [OPTION]")
